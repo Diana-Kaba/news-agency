@@ -1,0 +1,14 @@
+.log-link {
+    font-size: 20px;
+    color: #881214!important;
+    transition: 1s;
+}
+
+.log-link:hover {
+    color: #CF9B72!important;
+}
+
+.panel-title {
+    margin: 10px;
+    font-size: 30px;
+}
