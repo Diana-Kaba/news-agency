@@ -39,10 +39,6 @@ bis_skin_checked="1">
       <label class="wpforms-field-label" for="message">Message:
         <span class="wpforms-required-label" aria-hidden="true">*</span></label>
         <textarea name="message" id="message" style="width: 300px;"></textarea>
-        <!-- <input type="password"
-        id="pas" class="wpforms-field-large wpforms-field-required"
-        name="pas" spellcheck="false" aria-errormessage="wpforms-87-field_2-error"
-        required /> -->
     </div>
   </div>
 
@@ -55,17 +51,6 @@ bis_skin_checked="1">
 </form>
 </div>
 </div>
-
-<!-- <form name="myForm" action="action.php" method="post" onSubmit="return overify_message(this);">
-    <input type=hidden name="action" value="add">
-    <div></div>
-    <input name="title" style="width: 300px;">
-    <div>Message:</div>
-    <textarea name="message" style="width: 300px;"></textarea>
-    <div>
-        <input type="submit" name="submitAdd" value="Submit">
-    </div>
-</form> -->
 </div>
 
 <?php

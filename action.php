@@ -85,7 +85,8 @@ function add()
         $row = $result->fetch_assoc();
         $nick = $row['nickname'];
     } else {
-        return; // Exit the function if no nickname is found
+        $nick = 'User';
+        // return;
     }
 
     $message = mysqli_real_escape_string($conn, $_REQUEST['message']);
