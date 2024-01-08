@@ -15,16 +15,16 @@ if (isset($_SESSION['user_login'])) {
 $out = out(5);
 
 if (count($out) > 0) {
+  echo '          <div class="container" bis_skin_checked="1">
+  <div class="row" bis_skin_checked="1">
+    <div class="section-title" bis_skin_checked="1" id="news">
+      <h2>Recent World News</h2>
+    </div>
+  </div>
+</div>';
     foreach ($out as $row) {
 
         ?>
-          <div class="container" bis_skin_checked="1">
-    <div class="row" bis_skin_checked="1">
-      <div class="section-title" bis_skin_checked="1" id="news">
-        <h2>Recent World News</h2>
-      </div>
-    </div>
-  </div>
 <div class='container'>
     <div style="color: #999999;border-bottom:2px solid #999999;"><h3><?php echo $row['title']; ?></h3></div>
     <div style="background:#fafafa;padding:5px;"><?php echo $row['message']; ?></div>
