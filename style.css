@@ -4,6 +4,35 @@
   --white: #fff;
 }
 
+ul#menu-primary-menu {
+  float: right;
+}
+
+ul#menu-primary-menu li a,
+section.food-travel-blog-footer-sec a,
+h3.site-title a,
+.food-travel-blog-footer-sec ul li {
+  transition: 0.5s;
+}
+
+ul#menu-primary-menu li a:hover {
+  color: var(--accent);
+}
+
+section.food-travel-blog-footer-sec a:hover {
+  color: var(--add);
+}
+
+.custom-logo-link {
+  transition: 0.5s;
+}
+
+.custom-logo-link:hover,
+h3.site-title a:hover,
+.food-travel-blog-footer-sec ul li:hover {
+  opacity: 0.5;
+}
+
 .log-link {
   font-size: 20px;
   color: var(--accent) !important;
@@ -20,7 +49,7 @@
 }
 
 .pagination li {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .pagination li.active a {
