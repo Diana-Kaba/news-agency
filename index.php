@@ -12,10 +12,20 @@ if (isset($_SESSION['user_login'])) {
     echo "<a href='registration.php' class='log-link'>Register now</a></div>";
 }
 
-$out = out(5);
+$sql = "SELECT COUNT(*) AS total FROM articles";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$total_records = $row['total'];
+
+$page_size = 5;
+$total_pages = ceil($total_records / $page_size);
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$start = ($page - 1) * $page_size;
+
+$out = out($page_size, $start);
 
 if (count($out) > 0) {
-  echo '          <div class="container" bis_skin_checked="1">
+    echo '          <div class="container" bis_skin_checked="1">
   <div class="row" bis_skin_checked="1">
     <div class="section-title" bis_skin_checked="1" id="news">
       <h2>Recent World News</h2>
@@ -38,5 +48,13 @@ if (count($out) > 0) {
 } else {
     echo "<div class='container'><p>There are currently no articles...</p>";
 }
+
+echo '<div class="container"> <ul class="pagination">';
+for ($i = 1; $i <= $total_pages; $i++) {
+    $active = $i == $page ? 'active' : '';
+    echo "<li class='$active'><a href='index.php?page=$i'>$i</a></li>";
+}
+
+echo '</ul></div>';
 
 include "footer.html";

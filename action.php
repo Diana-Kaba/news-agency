@@ -9,9 +9,15 @@ if (!isset($_SESSION)) {
 function out($count)
 {
     global $conn;
+
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $page_size = 5;
+    $start = ($page - 1) * $page_size;
+
     $arr_out = [];
+    $sql = "SELECT * FROM articles ORDER BY date DESC LIMIT $start, $count";
     try {
-        if (!$result = $conn->query("SELECT * FROM articles ORDER BY date DESC LIMIT " . $count)) {
+        if (!$result = $conn->query($sql)) {
             throw new Exception('Error selection from table articles: [' . $conn->error . ']');
         }
         while ($row = $result->fetch_assoc()) {
@@ -20,6 +26,7 @@ function out($count)
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+
     return $arr_out;
 }
 
@@ -103,7 +110,6 @@ function add()
         echo $e->getMessage();
     }
 }
-
 
 if (isset($_REQUEST['action'])) {
     $action = $_REQUEST['action'];

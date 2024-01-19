@@ -1,14 +1,34 @@
+:root {
+  --accent: #881214;
+  --add: #cf9b72;
+  --white: #fff;
+}
+
 .log-link {
-    font-size: 20px;
-    color: #881214!important;
-    transition: 1s;
+  font-size: 20px;
+  color: var(--accent) !important;
+  transition: 1s;
 }
 
 .log-link:hover {
-    color: #CF9B72!important;
+  color: var(--add) !important;
 }
 
 .panel-title {
-    margin: 10px;
-    font-size: 30px;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.pagination li {
+    margin-top: 20px;
+}
+
+.pagination li.active a {
+  background-color: var(--accent) !important;
+  color: var(--white) !important;
+}
+
+.pagination li a {
+  color: var(--accent) !important;
+  margin-top: 20px;
 }
