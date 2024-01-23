@@ -6,12 +6,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-function out($page_size)
+function out($page, $page_size, $start)
 {
     global $conn;
-
-    $page = isset($_GET['page']) ? $_GET['page'] : 1;
-    $start = ($page - 1) * $page_size;
 
     $arr_out = [];
     $sql = "SELECT * FROM articles ORDER BY date DESC LIMIT $start, $page_size";

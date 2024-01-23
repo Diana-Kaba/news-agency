@@ -22,7 +22,7 @@ $total_pages = ceil($total_records / $page_size);
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $start = ($page - 1) * $page_size;
 
-$out = out($page_size);
+$out = out($page, $page_size, $start);
 
 if (count($out) > 0) {
     echo '          <div class="container" bis_skin_checked="1">
