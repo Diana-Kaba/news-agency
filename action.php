@@ -6,16 +6,15 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-function out($count)
+function out($page_size)
 {
     global $conn;
 
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
-    $page_size = 5;
     $start = ($page - 1) * $page_size;
 
     $arr_out = [];
-    $sql = "SELECT * FROM articles ORDER BY date DESC LIMIT $start, $count";
+    $sql = "SELECT * FROM articles ORDER BY date DESC LIMIT $start, $page_size";
     try {
         if (!$result = $conn->query($sql)) {
             throw new Exception('Error selection from table articles: [' . $conn->error . ']');
